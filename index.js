@@ -74,7 +74,7 @@ app.post('/login', async (req, res) => {
 
 
 
-app.get('/getallblogs', async (req, res) => {
+app.get('/getAllBlogs', async (req, res) => {
     try{
         const allBlogs = await Details.find();
         res.status.json({allBlogs})
