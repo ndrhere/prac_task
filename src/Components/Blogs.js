@@ -12,7 +12,8 @@ const [data, setData] = useState({title:'', description: '', blog_category:'', s
     }, [])
 
     const handleDelete = async (id) => {
-        const response = await fetch(`http://localhost:3000/deleteBlogs/${id}`);
+        const response = await fetch(`http://localhost:3000/deleteBlogs/${id}`, {
+        method: 'DELETE'});
         fetchData();
 
     }
@@ -77,6 +78,7 @@ const handleFormSubmit = async (event) => {
        <h3>{items.title}</h3>
        <p>{items.description}</p>
        <p>{items.blog_category}</p>
+        <p>{items.status}</p>
        <button>Edit</button>
        <button onClick = {() => handleUpdate(items._id)}>Update</button>
        <button onClick={() => handleDelete(items._id)}>Delete</button>
