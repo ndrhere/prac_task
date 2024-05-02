@@ -103,7 +103,7 @@ app.get('/getBlogsById/:id', async (req, res) => {
 app.post('/createBlogs', async (req, res) => {
     try{
         const {title, description, blog_category, status, slug} = req.body
-        const newBlogs = Details.create({
+        const newBlogs = await Details.create({
             title: title,
             description: description,
             blog_category: blog_category,
